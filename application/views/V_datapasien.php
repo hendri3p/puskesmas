@@ -127,7 +127,7 @@
                                     </a>
                                 </span>
                                 <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                    <a class="btn btn-success px-4 py-2" data-toggle="click-ripple" href="">
+                                    <a class="btn btn-success px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_tambahdatapasien');?>">
                                         <i class="si si-add"></i> Tambah Data Pasien
                                     </a>
                                 </span>
@@ -159,51 +159,34 @@
                             <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
                                 <thead>
                                     <tr>
-                                        <th class="text-center" style="width: 80px;">Tgl</th>
-                                        <th>Nama</th>
-                                        <th>Umur</th>
-                                        <th>Alamat</th>
-                                        <th>No.HP</th>
-                                        <th>Pelayanan</th>
-                                        <th>Keluhan</th>
-                                        <th>Obat</th>
-                                        <th>Hasil Diagnosa</th>
-                                        <th>Pembayaran</th>
+                                        <th>No</th>
+                                        <th>No KK</th>
+                                        <th>NIK</th>
+                                        <th>Nama Pasien</th>
+                                        <th>Umur Pasien</th>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Tinggi Badan</th>
+                                        <th>Berat Badan</th>
+                                        <th>Nomor BPJS</th>
                                     </tr>
                                 </thead>
+                                <?php
+                              foreach($pasien as $pas){
+                                ?>
                                 <tbody>
-                                    
                                     <tr>
-                                        <td class="text-center font-size-sm">10</td>
-                                        <td class="font-w600 font-size-sm">
-                                            <a href="be_pages_generic_blank.html">Umi</a>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            35
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            Kemiling
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            08xxxxxxx
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            Bersalin
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            Mual dan Pusing
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                             
-                                        </td>
-                                        <td class="d-none d-sm-table-cell font-size-sm">
-                                            Umum
-                                        </td>
+                                        <td><?php echo $pas->id_pasien?></td>
+                                        <td><?php echo $pas->no_kk?></td>
+                                        <td><?php echo $pas->nik?></td>
+                                        <td><?php echo $pas->nama_pasien?></td>
+                                        <td><?php echo $pas->umur_pasien?></td>
+                                        <td><?php echo $pas->gender?></td>
+                                        <td><?php echo $pas->tinggi_badan?></td>
+                                        <td><?php echo $pas->berat_badan?></td>
+                                        <td><?php echo $pas->no_bpjs?></td>
                                     </tr>
                                 </tbody>
+                                <?php }?>
                             </table>
                         </div>
                     </div>
