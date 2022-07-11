@@ -126,6 +126,11 @@
                                         <i class="si si-logout"></i> Logout
                                     </a>
                                 </span>
+                                <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+                                    <a class="btn btn-success px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_daftarberobat');?>">
+                                        <i class="si si-add"></i> Pendaftaran Berobat
+                                    </a>
+                                </span>
                             </div>
                         </div>
                     </div>
