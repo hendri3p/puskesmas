@@ -144,55 +144,50 @@
                             <h3 class="block-title">Form Pendaftaran Pasien</h3>
                         </div>
                         <div class="block-content block-content-full">
-                            <form action="<?= base_url('C_tambahdatapasien/tambah');?>" method="POST" enctype="multipart/form-data">
+                            <form action="<?= base_url('C_daftarberobat/daftar');?>" method="POST" enctype="multipart/form-data">
                                 <div class="row push">
                                     <div class="col-lg-4">
                                 </div>
                                     <div class="col-lg-8 col-xl-5">
                                         <div class="form-group">
-                                            <label for="no_kk">Nomor Kartu Keluarga</label>
-                                            <input type="text" class="form-control" id="no_kk" name="no_kk" placeholder="Nomor Kartu Keluarga">
-                                            
-                                        </div>
-                                        <div class="form-group">
                                             <label for="nik">Nomor Induk Kependudukan (NIK)</label>
                                             <input type="text" class="form-control" id="nik" name="nik" placeholder="Nomor Induk Kependudukan" required>    
                                         </div>
                                         <div class="form-group">
-                                            <label for="nama_pasien">Nama Lengkap</label>
-                                            <input type="text" class="form-control" id="nama_pasien" name="nama_pasien" placeholder="Nama Lengkap" required>    
+                                            <label for="nama_pasien_berobat">Nama Lengkap</label>
+                                            <input type="text" class="form-control" id="nama_pasien_berobat" name="nama_pasien_berobat" placeholder="Nama Lengkap" required>    
                                         </div>
                                         <div class="form-group">
-                                            <label for="umur_pasien">Umur</label>
-                                            <input type="text" class="form-control" id="umur_pasien" name="umur_pasien" placeholder="Umur" required>    
+                                            <label for="s">S</label>
+                                            <input type="text" class="form-control" id="s" name="s" required>    
                                         </div>
                                         <div class="form-group">
-                                            <label for="tempat_lahir">Tempat Lahir (kota)</label>
-                                            <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" placeholder="Tempat Lahir (kota)" required>    
+                                            <label for="o">O</label>
+                                            <input type="text" class="form-control" id="o" name="o" required>    
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="a">A</label>
+                                            <input type="text" class="form-control" id="a" name="a" required>    
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="p">P</label>
+                                            <input type="text" class="form-control" id="p" name="p" required>    
                                         </div>
                                         <div>
-                                        <label for="tgl_lahir_pasien">Tanggal Lahir</label>
-                                            <input type="date" class="form-control" id="tgl_lahir_pasien" name="tgl_lahir_pasien" placeholder="Tanggal Lahir">
+                                        <label for="tgl_berobat">Tanggal Berobat</label>
+                                            <input type="date" class="form-control" id="tgl_berobat" name="tgl_berobat" placeholder="Tanggal Berobat">
                                         </div>
                                         <div class="form-group">
-                                            <label for="example-select">Jenis Kelamin</label>
-                                            <select class="form-control" id="gender" name="gender" required>
-                                                <option value="0" disabled>Pilih Jenis Kelamin</option>
-                                                <option value="1">Laki-laki</option>
-                                                <option value="2">Perempuan</option>
+                                            <label for="example-select">Jenis Pembayaran</label>
+                                            <select class="form-control" id="jenis_pembayaran" name="jenis_pembayaran" required>
+                                                <option value="0" disabled>Pilih Jenis Pembayaran</option>
+                                                <option value="1">Tunai</option>
+                                                <option value="2">Non-tunai</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="tinggi_badan">Tinggi Badan</label>
-                                            <input type="number" class="form-control" id="tinggi_badan" name="tinggi_badan" placeholder="Tinggi Badan (cm)" required>    
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="berat_badan">Berat Badan</label>
-                                            <input type="number" class="form-control" id="berat_badan" name="berat_badan" placeholder="Berat Badan (Kg)" required>    
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="no_bpjs">Nomor BPJS (jika ada)</label>
-                                            <input type="text" class="form-control" id="no_bpjs" name="no_bpjs" placeholder="Nomor BPJS (jika ada)">    
+                                            <label for="jenis_poli">Jenis Poli</label>
+                                            <input type="text" class="form-control" id="jenis_poli" name="jenis_poli" placeholder="Jenis Poli" required>    
                                         </div>
                                         <div class="col-md-12 col-sm-12">
                                             <button type="submit" class="btn btn-success btn-lg btn-block">Daftar</button>
