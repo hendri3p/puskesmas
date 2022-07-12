@@ -24,7 +24,7 @@
     <!-- Stylesheets -->
     <!-- Fonts and OneUI framework -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
-    <link rel="stylesheet" id="css-main" href="<?= base_url('');?>assets/oneui/css/oneui.min.css">
+    <link rel="stylesheet" id="css-main" href="<?= base_url(''); ?>assets/oneui/css/oneui.min.css">
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
     <!-- END Stylesheets -->
@@ -87,7 +87,7 @@
             <!-- Side Header -->
             <div class="content-header bg-white-5">
                 <!-- Logo -->
-                <a class="font-w600 text-dual" href="<?= base_url('C_dashboard');?>">
+                <a class="font-w600 text-dual" href="<?= base_url('C_dashboard'); ?>">
                     <i class="fa fa-circle-notch text-primary"></i>
                     <span class="smini-hide">
                         <span class="font-w700 font-size-h5">Hi, <?php echo $this->session->userdata("nama"); ?></span>
@@ -100,7 +100,7 @@
             <div class="content-side content-side-full">
                 <ul class="nav-main">
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="<?= base_url('C_dashboard');?>">
+                        <a class="nav-main-link active" href="<?= base_url('C_dashboard'); ?>">
                             <span class="nav-main-link-name">Dashboard</span>
                         </a>
                     </li>
@@ -122,12 +122,12 @@
                             </div>
                             <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
                                 <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                    <a class="btn btn-danger px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_login/logout');?>">
+                                    <a class="btn btn-danger px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_login/logout'); ?>">
                                         <i class="si si-logout"></i> Logout
                                     </a>
                                 </span>
                                 <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                    <a class="btn btn-success px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_tambahdatapasien');?>">
+                                    <a class="btn btn-success px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_tambahdatapasien'); ?>">
                                         <i class="si si-add"></i> Tambah Data Pasien
                                     </a>
                                 </span>
@@ -139,58 +139,63 @@
             <!-- END Hero -->
             <!-- Page Content -->
             <div class="content">
-                    <!-- Dynamic Table Full -->
-                    <div class="block">
-                        <div class="block-content block-content-full">
-                            <div class="form-group">
-                                <label for="tgl">Daftar Antrian Pasien</label>
-                                <p></p>
-                                <input type="date" class="btn btn-light" id="tgl" name="tgl" placeholder="Tanggal Berobat">
-                                
-                                <select class="btn btn-light" id="example-select" name="example-select">
-                                    <option value="0">Pilih Jenis Perawatan</option>
-                                    <option value="1">Bersalin</option>
-                                    <option value="2">KB</option>
-                                    <option value="3">Imunisasi</option>
-                                    <option value="4">Pemeriksaan Kehamilan</option>
-                                </select>
+                <div class="row" style="margin-top: 50px">
+                    <div class="col-xs-4 col-xs-offset-4">
+                        <form action="<?= base_url('C_datapasien/search') ?>" method="get">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="keyword" placeholder="Masukan Kata Kunci...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">Cari</button>
+                                </span>
                             </div>
-                            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
-                            <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>No KK</th>
-                                        <th>NIK</th>
-                                        <th>Nama Pasien</th>
-                                        <th>Umur Pasien</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>Tinggi Badan</th>
-                                        <th>Berat Badan</th>
-                                        <th>Nomor BPJS</th>
-                                    </tr>
-                                </thead>
-                                <?php
-                              foreach($pasien as $pas){
-                                ?>
+                        </form>
+                    </div>
+                </div>
+                <!-- Dynamic Table Full -->
+                <div class="block">
+                    <div class="block-content block-content-full">
+                        <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+                        <table class="table table-bordered table-striped table-vcenter">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>No KK</th>
+                                    <th>NIK</th>
+                                    <th>Nama Pasien</th>
+                                    <th>Umur Pasien</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Tinggi Badan</th>
+                                    <th>Berat Badan</th>
+                                    <th>Nomor BPJS</th>
+                                </tr>
+                            </thead>
+                            <?php
+                            foreach ($pasien as $pas) {
+                            ?>
                                 <tbody>
                                     <tr>
-                                        <td><?php echo $pas->id_pasien?></td>
-                                        <td><?php echo $pas->no_kk?></td>
-                                        <td><?php echo $pas->nik?></td>
-                                        <td><?php echo $pas->nama_pasien?></td>
-                                        <td><?php echo $pas->umur_pasien?></td>
-                                        <td><?php echo $pas->gender?></td>
-                                        <td><?php echo $pas->tinggi_badan?></td>
-                                        <td><?php echo $pas->berat_badan?></td>
-                                        <td><?php echo $pas->no_bpjs?></td>
+                                        <td><?php echo $pas->id_pasien ?></td>
+                                        <td><?php echo $pas->no_kk ?></td>
+                                        <td><?php echo $pas->nik ?></td>
+                                        <td><?php echo $pas->nama_pasien ?></td>
+                                        <td><?php echo $pas->umur_pasien ?></td>
+                                        <td><?php echo $pas->gender ?></td>
+                                        <td><?php echo $pas->tinggi_badan ?></td>
+                                        <td><?php echo $pas->berat_badan ?></td>
+                                        <td>
+                                            <?php if ($pas->no_bpjs != 0) {
+                                                echo $pas->no_bpjs;
+                                            } else {
+                                                echo 'N\A';
+                                            } ?>
+                                        </td>
                                     </tr>
                                 </tbody>
-                                <?php }?>
-                            </table>
-                        </div>
+                            <?php } ?>
+                        </table>
                     </div>
-                    <!-- END Dynamic Table Full -->                
+                </div>
+                <!-- END Dynamic Table Full -->
             </div>
             <!-- END Page Content -->
         </main>
@@ -213,24 +218,24 @@
             assets/js/core/jquery.appear.min.js
             assets/js/core/js.cookie.min.js
         -->
-    <script src="<?= base_url('');?>assets/oneui/js/oneui.core.min.js"></script>
+    <script src="<?= base_url(''); ?>assets/oneui/js/oneui.core.min.js"></script>
     <!--
             OneUI JS
 
             Custom functionality including Blocks/Layout API as well as other vital and optional helpers
             webpack is putting everything together at assets/_es6/main/app.js
         -->
-    <script src="<?= base_url('');?>assets/oneui/js/oneui.app.min.js"></script>
+    <script src="<?= base_url(''); ?>assets/oneui/js/oneui.app.min.js"></script>
     <!-- Page JS Plugins -->
-    <script src="<?= base_url('');?>assets/oneui/js/plugins/chart.js/Chart.bundle.min.js"></script>
+    <script src="<?= base_url(''); ?>assets/oneui/js/plugins/chart.js/Chart.bundle.min.js"></script>
     <!-- Page JS Code -->
-    <script src="<?= base_url('');?>assets/oneui/js/pages/be_pages_dashboard.min.js"></script>
+    <script src="<?= base_url(''); ?>assets/oneui/js/pages/be_pages_dashboard.min.js"></script>
 
     <!-- DataTables -->
-        <script src="<?= base_url('');?>assets/oneui/js/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="<?= base_url('');?>assets/oneui/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
-        <script src="<?= base_url('');?>assets/oneui/js/plugins/datatables/buttons/dataTables.buttons.min.js"></script>
-        <script src="<?= base_url('');?>assets/oneui/js/pages/be_tables_datatables.min.js"></script>            
+    <script src="<?= base_url(''); ?>assets/oneui/js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url(''); ?>assets/oneui/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url(''); ?>assets/oneui/js/plugins/datatables/buttons/dataTables.buttons.min.js"></script>
+    <script src="<?= base_url(''); ?>assets/oneui/js/pages/be_tables_datatables.min.js"></script>
 </body>
 
 </html>

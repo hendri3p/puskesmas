@@ -178,8 +178,8 @@
                                             <label for="example-select">Jenis Kelamin</label>
                                             <select class="form-control" id="gender" name="gender" required>
                                                 <option value="0" disabled>Pilih Jenis Kelamin</option>
-                                                <option value="1">Laki-laki</option>
-                                                <option value="2">Perempuan</option>
+                                                <option>Laki-laki</option>
+                                                <option>Perempuan</option>
                                             </select>
                                         </div>
                                         <div class="form-group">

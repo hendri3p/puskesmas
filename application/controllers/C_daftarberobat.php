@@ -5,6 +5,7 @@ class C_daftarberobat extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('M_berobat');
+		$this->load->model('M_datapasien');
 	
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("C_login"));

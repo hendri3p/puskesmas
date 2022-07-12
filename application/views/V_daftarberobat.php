@@ -181,8 +181,8 @@
                                             <label for="example-select">Jenis Pembayaran</label>
                                             <select class="form-control" id="jenis_pembayaran" name="jenis_pembayaran" required>
                                                 <option value="0" disabled>Pilih Jenis Pembayaran</option>
-                                                <option value="1">Tunai</option>
-                                                <option value="2">Non-tunai</option>
+                                                <option>BPJS</option>
+                                                <option>Umum</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
