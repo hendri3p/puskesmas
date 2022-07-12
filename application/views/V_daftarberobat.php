@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Daftar Berobat Klinik Bidan Nyimas</title>
+    <title>Pendaftaran Berobat</title>
     <meta name="description" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
@@ -17,7 +17,7 @@
     <meta property="og:image" content="">
     <!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-    <link rel="shortcut icon" href="assets/images/Logo_Bidan_Nyimas-3.png">
+    <link rel="shortcut icon" href="assets/images/icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/Logo_Bidan_Nyimas-3.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/Logo_Bidan_Nyimas-3.png">
     <!-- Stylesheets -->
@@ -35,98 +35,20 @@
 </head>
 
 <body>
-    <!-- Page Container -->
-    <!--
-            Available classes for #page-container:
-
-        GENERIC
-
-            'enable-cookies'                            Remembers active color theme between pages (when set through color theme helper Template._uiHandleTheme())
-
-        SIDEBAR & SIDE OVERLAY
-
-            'sidebar-r'                                 Right Sidebar and left Side Overlay (default is left Sidebar and right Side Overlay)
-            'sidebar-mini'                              Mini hoverable Sidebar (screen width > 991px)
-            'sidebar-o'                                 Visible Sidebar by default (screen width > 991px)
-            'sidebar-o-xs'                              Visible Sidebar by default (screen width < 992px)
-            'sidebar-dark'                              Dark themed sidebar
-
-            'side-overlay-hover'                        Hoverable Side Overlay (screen width > 991px)
-            'side-overlay-o'                            Visible Side Overlay by default
-
-            'enable-page-overlay'                       Enables a visible clickable Page Overlay (closes Side Overlay on click) when Side Overlay opens
-
-            'side-scroll'                               Enables custom scrolling on Sidebar and Side Overlay instead of native scrolling (screen width > 991px)
-
-        HEADER
-
-            ''                                          Static Header if no class is added
-            'page-header-fixed'                         Fixed Header
-
-        HEADER STYLE
-
-            ''                                          Light themed Header
-            'page-header-dark'                          Dark themed Header
-
-        MAIN CONTENT LAYOUT
-
-            ''                                          Full width Main Content if no class is added
-            'main-content-boxed'                        Full width Main Content with a specific maximum width (screen width > 1200px)
-            'main-content-narrow'                       Full width Main Content with a percentage width (screen width > 1200px)
-        -->
-    <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
-        <!-- Sidebar -->
-        <!--
-                Sidebar Mini Mode - Display Helper classes
-
-                Adding 'smini-hide' class to an element will make it invisible (opacity: 0) when the sidebar is in mini mode
-                Adding 'smini-show' class to an element will make it visible (opacity: 1) when the sidebar is in mini mode
-                    If you would like to disable the transition animation, make sure to also add the 'no-transition' class to your element
-
-                Adding 'smini-hidden' to an element will hide it when the sidebar is in mini mode
-                Adding 'smini-visible' to an element will show it (display: inline-block) only when the sidebar is in mini mode
-                Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
-            -->
-        <nav id="sidebar" aria-label="Main Navigation">
-            <!-- Side Header -->
-            <div class="content-header bg-white-5">
-                <!-- Logo -->
-                <a class="font-w600 text-dual" href="index.html">
-                    <i class="fa fa-circle-notch text-primary"></i>
-                    <span class="smini-hide">
-                        <span class="font-w700 font-size-h5">Selamat Datang</span> 
-                    </span>
-                </a>
-                <!-- END Logo -->
-            </div>
-            <!-- END Side Header -->
-            <!-- Side Navigation -->
-            <div class="content-side content-side-full">
-                <ul class="nav-main">
-                    <li class="nav-main-item">
-                        <a class="nav-main-link active" href="usr_dash.html">
-                            <span class="nav-main-link-name">Dashboard</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- END Side Navigation -->
-        </nav>
-        <!-- END Sidebar -->
         <!-- Main Container -->
         <main id="main-container">
             <!-- Hero -->
-            <div class="bg-image overflow-hidden" style="background-image: url('assets/images/slider3.jpg');">
+            <div class="bg-image overflow-hidden" style="background-image: url('assets/images/nakes.jpg');">
                 <div class="bg-primary-dark-op">
                     <div class="content content-narrow content-full">
-                        <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-5 text-center text-sm-left">
+                        <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-8 text-center text-sm-left">
                             <div class="flex-sm-fill">
-                                <h1 class="font-w600 text-white mb-0 invisible" data-toggle="appear">Pendaftaran Pasien</h1>
+                                <h1 class="font-w600 text-white mb-2 " data-toggle="appear" data-timeout="250">Pendaftaran Berobat</h1>
                             </div>
                             <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
-                                <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                    <a class="btn btn-danger btn-lg btn-block" data-toggle="click-ripple" href="index.html">
-                                        <i class="si si-logout"></i> Logout
+                                <span class="" data-toggle="appear" data-timeout="350">
+                                    <a class="btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_dashboard');?>">
+                                        <i class="si si-home"></i> Kembali
                                     </a>
                                 </span>
                             </div>
@@ -141,7 +63,7 @@
                     <!-- Basic -->
                     <div class="block">
                         <div class="block-header">
-                            <h3 class="block-title">Form Pendaftaran Pasien</h3>
+                            <h3 class="block-title"></h3>
                         </div>
                         <div class="block-content block-content-full">
                             <form action="<?= base_url('C_daftarberobat/daftar');?>" method="POST" enctype="multipart/form-data">
@@ -181,13 +103,24 @@
                                             <label for="example-select">Jenis Pembayaran</label>
                                             <select class="form-control" id="jenis_pembayaran" name="jenis_pembayaran" required>
                                                 <option value="0" disabled>Pilih Jenis Pembayaran</option>
-                                                <option value="1">Tunai</option>
-                                                <option value="2">Non-tunai</option>
+                                                <option value="1">Umum</option>
+                                                <option value="2">BPJS</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="jenis_poli">Jenis Poli</label>
-                                            <input type="text" class="form-control" id="jenis_poli" name="jenis_poli" placeholder="Jenis Poli" required>    
+                                            <select class="form-control" id="jenis_pembayaran" name="jenis_pembayaran" required>
+                                                    <option value="0">Pilih Jenis Poli</option>
+                                                    <option value="1">KLinik Umum</option>
+                                                    <option value="2">KIA KB</option>
+                                                    <option value="3">BP Gigi</option>
+                                                    <option value="4">Laboratorium</option>                                    
+                                                    <option value="5">Ruang Farmasi</option>
+                                                    <option value="6">Klinik Gizi</option>
+                                                    <option value="7">UGD</option>
+                                                    <option value="8">Rawat Inap</option>
+                                                    <option value="9">VK</option>
+                                                </select>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
                                             <button type="submit" class="btn btn-success btn-lg btn-block">Daftar</button>
