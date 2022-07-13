@@ -1,6 +1,6 @@
 <?php 
  
-class M_berobat extends CI_Model{	
+class M_bpjs extends CI_Model{	
 	function tampil_data(){
 		return $this->db->get('berobat');
 	}
@@ -8,7 +8,15 @@ class M_berobat extends CI_Model{
 	function input_data($data,$table){
 		$this->db->insert($table,$data);
 	}
-    
+
+    function joindata(){
+        $this->db->select('*');
+        $this->db->from('berobat');
+        $this->db->join('pasien','berobat.nik = pasien.nik');      
+        $query = $this->db->get();
+        return $query;
+    }
+
     function hapus_data($where,$table){
 		$this->db->where($where);
 		$this->db->delete($table);
@@ -22,4 +30,5 @@ class M_berobat extends CI_Model{
 		$this->db->where($where);
 		$this->db->update($table,$data);
 	}
+	
 }
