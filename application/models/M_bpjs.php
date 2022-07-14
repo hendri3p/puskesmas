@@ -1,7 +1,7 @@
 <?php 
  
 class M_bpjs extends CI_Model{	
-	function tampil_data(){
+	function tampil_data_bpjs(){
 		return $this->db->get('berobat');
 	}
 	
@@ -10,9 +10,9 @@ class M_bpjs extends CI_Model{
 	}
 
     function joindata(){
-        $this->db->select('*');
-        $this->db->from('berobat');
-        $this->db->join('pasien','berobat.nik = pasien.nik');      
+        $this->db->select('tinggi_badan, berat_badan');
+        $this->db->from('pasien');
+        $this->db->join('berobat','berobat.nik = pasien.nik');      
         $query = $this->db->get();
         return $query;
     }

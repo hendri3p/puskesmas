@@ -101,7 +101,7 @@
                                         <th>Nominal Pembayaran</th>
                                     </tr>
                                 </thead>
-								<?php 
+								<!-- <?php 
 								foreach($pasien as $pas){
                                 ?>
                                     <tbody>
@@ -124,10 +124,10 @@
                                             <td><?php echo $pas->diagnosa?></td>
                                             <td><?php echo $pas->resep_obat?></td>
                                             <td><?php echo $pas->jenis_poli?></td>
-                                            <td><?php echo $pas->price?></td>
+                                            <td><?php echo $pas->price?></td> 
                                         </tr>
                                     </tbody>
-                                <?php }?>
+                                <?php }?> -->
                             </table>
                         </div>
                     </div>

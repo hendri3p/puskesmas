@@ -13,7 +13,7 @@ class C_bpjs extends CI_Controller {
 
 	public function index()
 	{
-		$data['berobat']= $this->M_berobat->tampil_data()->result(); 
+		$data['berobat']= $this->M_berobat->tampil_data_bpjs()->result(); 
 		$this->load->view('V_bpjs', $data);
 	}
 

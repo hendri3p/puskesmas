@@ -55,78 +55,71 @@
             <!-- END Hero -->
             <!-- Page Content -->
             <div class="content">
-                    <!-- Dynamic Table Full -->
-                    <div class="block">
-                        <div class="block-content block-content-full">
-                            <div class="form-group">
-                                <label for="tgl">Daftar Antrian Pasien</label>
-                                <p></p>
-                                <input type="date" class="btn btn-light" id="tgl" name="tgl" placeholder="Tanggal Berobat">
-                                <select class="btn btn-light" id="example-select" name="example-select">
-                                    <option value="0">Pilih Jenis Poli</option>
-                                    <option value="1">KLinik Umum</option>
-                                    <option value="2">KIA KB</option>
-                                    <option value="3">BP Gigi</option>
-                                    <option value="4">Laboratorium</option>                                    
-                                    <option value="5">Ruang Farmasi</option>
-                                    <option value="6">Klinik Gizi</option>
-                                    <option value="7">UGD</option>
-                                    <option value="8">Rawat Inap</option>
-                                    <option value="9">VK</option>
-                                </select>
+                <div class="row" style="margin-top: 50px">
+                    <div class="col-xs-4 col-xs-offset-4">
+                        <form action="<?= base_url('C_datapasien/search') ?>" method="get">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="keyword" placeholder="Masukan Kata Kunci...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">Cari</button>
+                                </span>
                             </div>
-                            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
-                            <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
-                                <thead>
-                                <tr>
-                                        <th class="text-center" style="width: 80px;">Tgl</th>
-                                        <th>No</th>
-                                        <th>No KK</th>
-                                        <th>NIK</th>
-                                        <th>Nama Pasien</th>
-                                        <th>Umur Pasien</th>
-                                        <th>Alamat</th>
-                                        <th>No.Hp</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>Tinggi Badan</th>
-                                        <th>Berat Badan</th>
-                                        <th>S</th>
-                                        <th>O</th>
-                                        <th>A</th>
-                                        <th>P</th>
-                                        <th>Hasil Diagnosa</th>
-                                        <th>Resep Obat</th>
-                                        <th>Nominal Pembayaran</th>
-                                    </tr>
-                                </thead>
-                                <?php foreach($pasien as $pas){
-                                ?>
-                                    <tbody>
-                                        <tr>
-                                            <td><?php echo $pas->id_pasien?></td>
-                                            <td><?php echo $pas->no_kk?></td>
-                                            <td><?php echo $pas->nik?></td>
-                                            <td><?php echo $pas->nama_pasien?></td>
-                                            <td><?php echo $pas->umur_pasien?></td>
-                                            <td><?php echo $pas->alamat?></td>
-                                            <td><?php echo $pas->no_hp?></td>
-                                            <td><?php echo $pas->gender?></td>
-                                            <td><?php echo $pas->tinggi_badan?></td>
-                                            <td><?php echo $pas->berat_badan?></td>
-                                            <td><?php echo $pas->s?></td>
-                                            <td><?php echo $pas->o?></td>
-                                            <td><?php echo $pas->a?></td>
-                                            <td><?php echo $pas->p?></td>
-                                            <td><?php echo $pas->diagnosa?></td>
-                                            <td><?php echo $pas->resep_obat?></td>
-                                            <td><?php echo $pas->price?></td>
-                                        </tr>
-                                    </tbody>
-                                <?php }?>
-                            </table>
-                        </div>
+                        </form>
                     </div>
-                    <!-- END Dynamic Table Full -->                
+                </div>
+                <!-- Dynamic Table Full -->
+                <div class="block">
+                    <div class="block-content block-content-full">
+                        <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+                        <table class="table table-bordered table-striped table-vcenter">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIK</th>
+                                    <th>Nama Pasien</th>
+                                    <th>Tinggi Badan</th>
+                                    <th>Berat Badan</th>
+                                    <th>S</th>
+                                    <th>O</th>
+                                    <th>A</th>
+                                    <th>P</th>
+                                    <th>Jenis Poli</th>
+                                    <th>Diagnosa</th>
+                                    <th>Resep Obat</th>
+                                    <th>Pembayaran</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <?php
+                            $no = 1;
+                            foreach ($berobat as $berobat) {
+                            ?>
+                                <tbody>
+                                    <tr>
+                                        <td><?php echo $no++ ?></td>
+                                        <td><?php echo $berobat->nik ?></td>
+                                        <td><?php echo $berobat->nama_pasien_berobat ?></td>
+                                        <td><?php echo $berobat->s?></td>
+                                        <td><?php echo $berobat->o?></td>
+                                        <td><?php echo $berobat->a?></td>
+                                        <td><?php echo $berobat->p?></td>
+                                        <td><?php echo $berobat->jenis_poli?></td>
+                                        <td><?php echo $berobat->diagnosa?></td>
+                                        <td><?php echo $berobat->jenis_obat?></td>
+                                        <td><?php echo $berobat->pembayaran?></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <?php echo anchor('C_pasienumum/edit/'.$berobat->id_berobat,'Edit'); ?>
+                                            <?php echo anchor('C_pasienumum/hapus/'.$berobat->id_berobat,'Hapus'); ?>          
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            <?php } ?>
+                        </table>
+                    </div>
+                </div>
+                <!-- END Dynamic Table Full -->
             </div>
             <!-- END Page Content -->
         </main>

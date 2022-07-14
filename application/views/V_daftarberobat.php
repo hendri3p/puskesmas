@@ -102,24 +102,24 @@
                                         <div class="form-group">
                                             <label for="example-select">Jenis Pembayaran</label>
                                             <select class="form-control" id="jenis_pembayaran" name="jenis_pembayaran" required>
-                                                <option value="0" disabled>Pilih Jenis Pembayaran</option>
-                                                <option value="1">Umum</option>
-                                                <option value="2">BPJS</option>
+                                                <option  disabled>Pilih Jenis Pembayaran</option>
+                                                <option >Umum</option>
+                                                <option >BPJS</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="jenis_poli">Jenis Poli</label>
-                                            <select class="form-control" id="jenis_pembayaran" name="jenis_pembayaran" required>
-                                                    <option value="0">Pilih Jenis Poli</option>
-                                                    <option value="1">KLinik Umum</option>
-                                                    <option value="2">KIA KB</option>
-                                                    <option value="3">BP Gigi</option>
-                                                    <option value="4">Laboratorium</option>                                    
-                                                    <option value="5">Ruang Farmasi</option>
-                                                    <option value="6">Klinik Gizi</option>
-                                                    <option value="7">UGD</option>
-                                                    <option value="8">Rawat Inap</option>
-                                                    <option value="9">VK</option>
+                                            <label for="example-select">Jenis Poli</label>
+                                            <select class="form-control" id="jenis_poli" name="jenis_poli" required>
+                                                    <option disabled>Pilih Jenis Poli</option>
+                                                    <option >KLinik Umum</option>
+                                                    <option >KIA KB</option>
+                                                    <option >BP Gigi</option>
+                                                    <option >Laboratorium</option>                                    
+                                                    <option >Ruang Farmasi</option>
+                                                    <option >Klinik Gizi</option>
+                                                    <option >UGD</option>
+                                                    <option >Rawat Inap</option>
+                                                    <option >VK</option>
                                                 </select>
                                         </div>
                                         <div class="col-md-12 col-sm-12">

@@ -2,9 +2,9 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 11, 2022 at 02:17 AM
--- Server version: 10.4.24-MariaDB
+-- Host: localhost
+-- Generation Time: Jul 13, 2022 at 04:17 AM
+-- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -28,16 +28,29 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `berobat` (
-  `id_ berobat` int(11) NOT NULL,
+  `id_berobat` int(11) NOT NULL,
   `nik` bigint(20) NOT NULL,
   `nama_pasien_berobat` varchar(100) NOT NULL,
   `s` text NOT NULL,
   `o` text NOT NULL,
   `a` text NOT NULL,
   `p` text NOT NULL,
-  `jenis_pembayaran` varchar(100) NOT NULL,
-  `jenis_poli` varchar(100) NOT NULL
+  `tgl_berobat` date NOT NULL,
+  `jenis_pembayaran` text NOT NULL,
+  `jenis_poli` varchar(100) NOT NULL,
+  `diagnosa` text DEFAULT NULL,
+  `jenis_obat` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `berobat`
+--
+
+INSERT INTO `berobat` (`id_berobat`, `nik`, `nama_pasien_berobat`, `s`, `o`, `a`, `p`, `tgl_berobat`, `jenis_pembayaran`, `jenis_poli`, `diagnosa`, `jenis_obat`) VALUES
+(1, 3175050607991001, 'Muhammad Telaga', 'test', 'test', 'test', 'test', '2022-07-11', '1', 'gigi', '', ''),
+(2, 3175050607991001, 'Muhammad Telaga', 'test', 'test', 'test', 'test', '2022-07-12', '1', 'testing', '', ''),
+(3, 3175050607991001, 'Muhammad Telaga', 'test', 'test', 'test', 'test', '2022-07-12', '1', 'testing', '', ''),
+(4, 3175050607991001, 'm', 'sda', 'ada', 'dfad', 'asfadf', '2022-07-12', 'BPJS', 'testing', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -64,7 +77,13 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`id_pasien`, `no_kk`, `nik`, `nama_pasien`, `umur_pasien`, `tempat_lahir`, `tgl_lahir_pasien`, `gender`, `tinggi_badan`, `berat_badan`, `no_bpjs`) VALUES
-(1, 123, 123, 'Telaga Testing', 23, 'Jakarta', '1999-07-06', '1', 163, 75, 0);
+(1, 123, 123, 'Telaga Testing', 23, 'Jakarta', '1999-07-06', '1', 163, 75, 0),
+(2, 123, 123, 'Telaga Testing', 23, 'Jakarta', '2022-07-12', '1', 12, 12, 0),
+(3, 123, 123, 'Telaga Testing', 23, 'Jakarta', '2022-07-12', '1', 13, 123, 123),
+(4, 1234567889, 3175050607991001, 'roy', 123, 'jak', '2022-07-12', '1', 13, 123, 4234),
+(5, 123, 13213, 'dfdsfd', 1223, 'asdsad', '2000-09-08', '1', 123, 123, 452),
+(6, 123124, 214321, 'm', 213, 'aa', '2000-08-09', '1', 213, 132, 3890),
+(7, 123, 3175050607991001, 'm', 123, 'Jakarta', '2022-07-12', 'Laki-laki', 7, 6, 0);
 
 -- --------------------------------------------------------
 
@@ -93,7 +112,7 @@ INSERT INTO `user` (`id_user`, `username`, `password`) VALUES
 -- Indexes for table `berobat`
 --
 ALTER TABLE `berobat`
-  ADD PRIMARY KEY (`id_ berobat`);
+  ADD PRIMARY KEY (`id_berobat`);
 
 --
 -- Indexes for table `pasien`
@@ -115,13 +134,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `berobat`
 --
 ALTER TABLE `berobat`
-  MODIFY `id_ berobat` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_berobat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user`

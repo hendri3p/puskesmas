@@ -41,6 +41,6 @@ class C_tambahdatapasien extends CI_Controller {
             'no_bpjs' => $no_bpjs
         );
         $this->M_datapasien->input_data($data, 'pasien');
-        redirect('C_datapasien');
+        redirect('C_tambahdatapasien');
     }
 }
