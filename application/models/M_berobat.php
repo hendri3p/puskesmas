@@ -2,7 +2,12 @@
  
 class M_berobat extends CI_Model{	
 	function tampil_data_bpjs(){
-		return $this->db->get('berobat');
+		
+		$this->db->select('*');
+        $this->db->from('pasien');
+        $this->db->join('berobat','berobat.nik = pasien.nik');      
+        $query = $this->db->get();
+        return $query;
 	}
 	
 	function tampil_data_umum(){

@@ -21,6 +21,8 @@ class C_tambahdatapasien extends CI_Controller {
         $nik = $this->input->post('nik');
         $nama_pasien = $this->input->post('nama_pasien');
         $umur_pasien = $this->input->post('umur_pasien');
+        $alamat = $this->input->post('alamat');
+        $no_hp =$this->input->post('no_hp');
         $tempat_lahir = $this->input->post('tempat_lahir');
         $tgl_lahir_pasien = $this->input->post('tgl_lahir_pasien');
         $gender = $this->input->post('gender');
@@ -33,6 +35,8 @@ class C_tambahdatapasien extends CI_Controller {
             'nik' => $nik,
             'nama_pasien' => $nama_pasien,
             'umur_pasien' => $umur_pasien,
+            'alamat' => $alamat,
+            'no_hp' => $no_hp,
             'tempat_lahir' => $tempat_lahir,
             'tgl_lahir_pasien' => $tgl_lahir_pasien,
             'gender' => $gender,

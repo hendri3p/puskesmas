@@ -42,9 +42,9 @@
                                 <h1 class="font-w600 text-white mb-2 invisible" data-toggle="appear">Rekam Medis</h1>
                             </div>
                             <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
-                                <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                    <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_dashboard');?>">
-                                        <i class="si si-home"></i> Kembali
+                            <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+                                    <a class="btn btn-danger px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_login/logout');?>">
+                                        <i class="si si-logout"></i> Logout
                                     </a>
                                 </span>
                             </div>
@@ -55,27 +55,22 @@
             <!-- END Hero -->
             <!-- Page Content -->
             <div class="content">
+                </div>
                     <!-- Dynamic Table Full -->
                     <div class="block">
                         <div class="block-content block-content-full">
-                            <div class="form-group">
-                                <label for="tgl">Daftar Data Pasien</label>
-                                <p></p>
-                                <input type="date" class="btn btn-light" id="tgl" name="tgl" placeholder="Tanggal Berobat">
-                                <select class="btn btn-light" id="example-select" name="example-select">
-                                    <option value="0">Pilih Jenis Poli</option>
-                                    <option value="1">KLinik Umum</option>
-                                    <option value="2">KIA KB</option>
-                                    <option value="3">BP Gigi</option>
-                                    <option value="4">Laboratorium</option>                                    
-                                    <option value="5">Ruang Farmasi</option>
-                                    <option value="6">Klinik Gizi</option>
-                                    <option value="7">UGD</option>
-                                    <option value="8">Rawat Inap</option>
-                                    <option value="9">VK</option>
-                                </select>
-                            </div>
-                            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+                        <div class="row" style="margin-top: 50px">
+                                <div class="col-xs-4 col-xs-offset-4">
+                                    <form action="<?= base_url('C_datapasien/search') ?>" method="get">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="keyword" placeholder="Masukan Kata Kunci...">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="submit">Cari</button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+             <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
                             <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
                                 <thead>
                                 <tr>
@@ -181,3 +176,4 @@
 </body>
 
 </html>
+

@@ -99,6 +99,8 @@
                                         <td><?php echo $no++ ?></td>
                                         <td><?php echo $berobat->nik ?></td>
                                         <td><?php echo $berobat->nama_pasien_berobat ?></td>
+                                        <td><?php echo $berobat->tinggi_badan ?></td>
+                                        <td><?php echo $berobat->berat_badan ?></td>
                                         <td><?php echo $berobat->s?></td>
                                         <td><?php echo $berobat->o?></td>
                                         <td><?php echo $berobat->a?></td>
