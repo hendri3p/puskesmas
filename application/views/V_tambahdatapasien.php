@@ -81,6 +81,14 @@
                                             <input type="text" class="form-control" id="nik" name="nik" placeholder="Nomor Induk Kependudukan" required>    
                                         </div>
                                         <div class="form-group">
+                                            <label for="username">Username</label>
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="username" required>    
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="text" class="form-control" id="password" name="password" placeholder="password" required>    
+                                        </div>
+                                        <div class="form-group">
                                             <label for="nama_pasien">Nama Lengkap</label>
                                             <input type="text" class="form-control" id="nama_pasien" name="nama_pasien" placeholder="Nama Lengkap" required>    
                                         </div>

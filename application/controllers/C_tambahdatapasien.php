@@ -19,6 +19,8 @@ class C_tambahdatapasien extends CI_Controller {
     public function tambah(){
         $no_kk = $this->input->post('no_kk');
         $nik = $this->input->post('nik');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
         $nama_pasien = $this->input->post('nama_pasien');
         $umur_pasien = $this->input->post('umur_pasien');
         $alamat = $this->input->post('alamat');
@@ -33,6 +35,8 @@ class C_tambahdatapasien extends CI_Controller {
         $data = array(
             'no_kk' => $no_kk,
             'nik' => $nik,
+            'username' => $username,
+            'password' => $password,
             'nama_pasien' => $nama_pasien,
             'umur_pasien' => $umur_pasien,
             'alamat' => $alamat,

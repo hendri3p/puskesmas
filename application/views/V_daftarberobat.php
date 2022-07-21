@@ -119,7 +119,6 @@
                                                     <option >Klinik Gizi</option>
                                                     <option >UGD</option>
                                                     <option >Rawat Inap</option>
-                                                    <option >VK</option>
                                                 </select>
                                         </div>
                                         <div class="col-md-12 col-sm-12">

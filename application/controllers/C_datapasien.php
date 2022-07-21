@@ -6,9 +6,7 @@ class C_datapasien extends CI_Controller {
 		parent::__construct();
 		$this->load->model('M_datapasien');
 	
-		if($this->session->userdata('status') != "login"){
-			redirect(base_url("C_login"));
-		}
+	
 	}
 
 	public function index()

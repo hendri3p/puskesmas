@@ -10,6 +10,14 @@ class C_login extends CI_Controller {
 	}
 
 	public function index(){
+       
+        if ($this->session->userdata('user_login')) {
+            redirect('C_dashboard');
+        }
+        if ($this->session->userdata('pasien_login')) {
+            redirect('C_pasien');
+        }
+        
         $this->load->view('V_login');
     }
 
@@ -17,27 +25,59 @@ class C_login extends CI_Controller {
         $username = $this->input->post('username');
 		$password = $this->input->post('password');
 
-        $where = array(
-			'username' => $username,
-			'password' => $password
-			);
+        $user = $this->db->get_where('user', ['username' => $username])->row_array();
+        $pasien = $this->db->get_where('pasien', ['username' => $username])->row_array();
+
+       
         
-            $cek = $this->M_login->cek_login("user",$where)->num_rows();    
-            if($cek > 0){
- 
-                $data_session = array(
-                    'nama' => $username,
+        if ($user)
+        {
+            if($password == $user['password'] )
+            {
+                $data = [
+                    'user_login' => $user['username'],
                     'status' => "login"
-                    );
-     
-                $this->session->set_userdata($data_session);
-     
-                redirect(base_url("C_dashboard"));
-     
-            }else{
-                echo "Username dan password salah !";
-            }    
+                ];
+                $this->session->set_userdata($data);
+                redirect('C_dashboard');
+            }
+            else 
+            {
+                $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert"> Password Salah! </div>');
+            redirect(base_url());
+            }
+        }
+
+        else if ($pasien)
+        {
+            if ($password == $pasien['password'])
+            {
+                $data = [
+                    'pasien_login' => $pasien['username'],
+                    'status' => "login"
+                ];
+                $this->session->set_userdata($data);
+                redirect('C_pasien');
+            }
+            else 
+            {
+                $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert"> Password Salah! </div>');
+            redirect(base_url());
+            }
+        }
+
+        
+        else 
+        {
+            $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert"> Akun tidak terdaftar! </div>');
+            redirect(base_url());
+        }
+        
+        
+
     }
+        
+    
 
     public function logout(){
         $this->session->sess_destroy();

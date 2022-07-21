@@ -72,7 +72,6 @@
                                     <option value="6">Klinik Gizi</option>
                                     <option value="7">UGD</option>
                                     <option value="8">Rawat Inap</option>
-                                    <option value="9">VK</option>
                                 </select>
                             </div>
                             <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
