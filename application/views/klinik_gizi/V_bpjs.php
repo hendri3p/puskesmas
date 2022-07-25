@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Rekam Medis</title>
+    <title>Pasien BPJS</title>
     <meta name="description" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
@@ -31,19 +31,20 @@
 </head>
 
 <body>
+
     <!-- Main Container -->
     <main id="main-container">
         <!-- Hero -->
-        <div class="bg-image overflow-hidden" style="background-image: url('assets/images/nakes.jpg');">
+        <div class="bg-image overflow-hidden" style="background-image: url('<?= base_url(''); ?>assets/images/nakes.jpg');">
             <div class="bg-primary-dark-op">
                 <div class="content content-narrow content-full">
                     <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-8 text-center text-sm-left">
                         <div class="flex-sm-fill">
-                            <h1 class="font-w600 text-white mb-2 invisible" data-toggle="appear">Rekam Medis</h1>
+                            <h1 class="font-w600 text-white mb-2 invisible" data-toggle="appear">Pasien BPJS</h1>
                         </div>
                         <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
                             <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_dashboard'); ?>">
+                                <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('gizi/C_dashgizi'); ?>">
                                     <i class="si si-home"></i> Kembali
                                 </a>
                             </span>
@@ -52,113 +53,124 @@
                 </div>
             </div>
         </div>
+
         <!-- END Hero -->
         <!-- Page Content -->
         <div class="content">
-            <!-- Dynamic Table Full -->
-            <div class="block">
-                <div class="block-content block-content-full">
+            <div class="row" style="margin-top: 50px">
+                <div class="col-xs-4 col-xs-offset-4">
                     <form action="" method="GET">
-                        <div class="form-group">
-                            <label for="tgl">Daftar Data Pasien <?= $login ?> </label>
-                            <p></p>
-                            <input type="date" class="btn btn-light" id="tgl_berobat" name="tgl_berobat" placeholder="Tanggal Berobat" value="<?= date('Y-m-d') ?>">
-                            <select class="btn btn-light" id="jenis_poli" name="jenis_poli">
-                                <?php if ($login == 'admin') { ?>
-                                    <option value="KLinik Umum">KLinik Umum</option>
-                                    <option value="KIA KB">KIA KB</option>
-                                    <option value="BP Gigi">BP Gigi</option>
-                                    <option value="Laboratorium">Laboratorium</option>
-                                    <option value="Ruang Farmasi">Ruang Farmasi</option>
-                                    <option value="Klinik Gizi">Klinik Gizi</option>
-                                    <option value="UGD">UGD</option>
-                                    <option value="Rawat Inap">Rawat Inap</option>
-                                <?php } ?>
-                                <?php if ($login == 'poligigi') { ?>
-                                    <option value="BP Gigi">BP Gigi</option>
-                                <?php } ?>
-                                <?php if ($login == 'klinikumum') { ?>
-                                    <option value="KLinik Umum">KLinik Umum</option>
-                                <?php } ?>
-                                <?php if ($login == 'klinikkia') { ?>
-                                    <option value="KIA KB">KIA KB</option>
-                                <?php } ?>
-                                <?php if ($login == 'klinikgizi') { ?>
-                                    <option value="Klinik Gizi">Klinik Gizi</option>
-                                <?php } ?>
-                            </select>
+                        <div class="input-group">
+                            <input type="date" name="tgl_berobat" class="form-control ml-3">
                             <span class="input-group-btn">
-                                <button class="btn btn-success" type="submit">Cari</button>
-                                <a href="<?= base_url('C_rekammedis') ?>" class="btn btn-warning">X Clear</a>
+                                <button class="btn btn-default" type="submit" value="Cari">Cari</button>
                             </span>
                         </div>
                     </form>
+                </div>
+            </div>
+            <!-- Dynamic Table Full -->
+            <div class="block">
+                <div class="block-content block-content-full">
                     <table class="table table-bordered table-responsive table-striped table-vcenter js-dataTable-full">
                         <thead>
                             <tr>
-                                <th class="text-center" style="width: 80px;">No</th>
-                                <th>No KK</th>
+                                <th>No</th>
+                                <th>Tanggal</th>
                                 <th>NIK</th>
-                                <th>Tanggal Berobat</th>
-                                <th>Jenis Poli</th>
                                 <th>Nama Pasien</th>
-                                <th>Umur Pasien</th>
-                                <th>Alamat</th>
-                                <th>No.Hp</th>
-                                <th>Jenis Kelamin</th>
                                 <th>Tinggi Badan</th>
                                 <th>Berat Badan</th>
-                                <th>No. Bpjs</th>
                                 <th>S</th>
                                 <th>O</th>
                                 <th>A</th>
                                 <th>P</th>
-                                <th>Hasil Diagnosa</th>
+                                <th>Jenis Poli</th>
+                                <th>Diagnosa</th>
+                                <th>Hasil Lab</th>
+                                <th>Rujukan</th>
                                 <th>Resep Obat</th>
-                                <th>Nominal Pembayaran</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <?php
                         $no = 1;
-                        foreach ($pasien as $pas) {
+                        foreach ($berobat as $berobat) {
                         ?>
                             <tbody>
                                 <tr>
-                                    <td><?php echo $pas['id_pasien'] ?></td>
-                                    <td><?php echo $pas['no_kk'] ?></td>
-                                    <td><?php echo $pas['nik'] ?></td>
-                                    <td><?php echo $pas['tgl_berobat'] ?></td>
-                                    <td><?php echo $pas['jenis_poli'] ?></td>
-                                    <td><?php echo $pas['nama_pasien'] ?></td>
-                                    <td><?php echo $pas['umur_pasien'] ?></td>
-                                    <td><?php echo $pas['alamat'] ?></td>
-                                    <td><?php echo $pas['no_hp'] ?></td>
-                                    <td><?php echo $pas['gender'] ?></td>
-                                    <td><?php echo $pas['tinggi_badan'] ?></td>
-                                    <td><?php echo $pas['berat_badan'] ?></td>
-                                    <td><?php echo $pas['no_bpjs'] ?></td>
-                                    <td><?php echo $pas['s'] ?></td>
-                                    <td><?php echo $pas['o'] ?></td>
-                                    <td><?php echo $pas['a'] ?></td>
-                                    <td><?php echo $pas['p'] ?></td>
-                                    <td><?php echo $pas['diagnosa'] ?></td>
-                                    <td><?php echo $pas['jenis_obat'] ?></td>
-                                    <td><?php echo $pas['pembayaran'] ?></td>
+                                    <td><?php echo $no++ ?></td>
+                                    <td><?php echo $berobat['tgl_berobat'] ?></td>
+                                    <td><?php echo $berobat['nik'] ?></td>
+                                    <td><?php echo $berobat['nama_pasien_berobat'] ?></td>
+                                    <td><?php echo $berobat['tinggi_badan'] ?></td>
+                                    <td><?php echo $berobat['berat_badan'] ?></td>
+                                    <td><?php echo $berobat['s'] ?></td>
+                                    <td><?php echo $berobat['o'] ?></td>
+                                    <td><?php echo $berobat['a'] ?></td>
+                                    <td><?php echo $berobat['p'] ?></td>
+                                    <td><?php echo $berobat['jenis_poli'] ?></td>
+                                    <td><?php echo $berobat['diagnosa'] ?></td>
+                                    <td>
+                                        <?php if ($berobat['hasil_lab'] != '-') { ?>
+                                            <a href="<?= base_url('') ?>/assets/file_upload/<?php echo $berobat['hasil_lab'] ?>" class="btn btn-success">Download</a>
+                                        <?php } else { ?>
+                                            <?php echo $berobat['hasil_lab'] ?>
+                                        <?php } ?>
+                                    </td>
+                                    <td><?php echo $berobat['rujukan'] ?></td>
+                                    <td><?php echo $berobat['jenis_obat'] ?></td>
+                                    <td>
+                                        <?php echo anchor('C_bpjs/edit/' . $berobat['id_berobat'], 'Edit'); ?>
+                                        <?php echo anchor('C_bpjs/hapus/' . $berobat['nik'], 'Hapus'); ?>
+                                    </td>
                                 </tr>
                             </tbody>
                         <?php } ?>
                     </table>
                 </div>
+                <!-- <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-data" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Edit Data</h4>
+                                    </div>
+                                    <form class="form-horizontal" action="<?php echo base_url('admin/tambah') ?>" method="post" enctype="multipart/form-data" role="form">
+                                    <div class="modal-body">
+                                            <div class="form-group">
+                                                <label class="col-lg-2 col-sm-2 control-label">Diagnosa</label>
+                                                <div class="col-lg-10">
+                                                    <input type="text" class="form-control" name="diagnosa" placeholder="Diagnosa">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-lg-2 col-sm-2 control-label">Resep Obat</label>
+                                                <div class="col-lg-10">
+                                                <textarea class="form-control" name="jenis_obat" placeholder="Resep Obat"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-lg-2 col-sm-2 control-label">Aksi</label>
+                                                <div class="col-lg-10">
+                                                    <input type="text" class="form-control" name="aksi" placeholder="Aksi">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-info" type="submit"> Simpan&nbsp;</button>
+                                            <button type="button" class="btn btn-warning" data-dismiss="modal"> Batal</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
             </div>
             <!-- END Dynamic Table Full -->
         </div>
         <!-- END Page Content -->
     </main>
     <!-- END Main Container -->
-    <!-- Footer -->
-    <footer id="page-footer" class="bg-body-light">
-    </footer>
-    <!-- END Footer -->
     </div>
     <!-- END Page Container -->
     <!--

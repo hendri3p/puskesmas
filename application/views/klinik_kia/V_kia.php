@@ -34,7 +34,7 @@
         <!-- Main Container -->
         <main id="main-container">
             <!-- Hero -->
-            <div class="bg-image overflow-hidden" style="background-image: url('assets/images/nakes.jpg');">
+            <div class="bg-image overflow-hidden" style="background-image: url('assets/images/nakes2.jpg');">
                 <div class="bg-primary-dark-op">
                     <div class="content content-narrow content-full">
                         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-8 text-center text-sm-left">
@@ -70,7 +70,7 @@
                                             <h3 class="text-white mb-0">Pasien BPJS</h3>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <a href="<?= base_url('C_bpjs');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
+                                            <a href="<?= base_url('kia/C_bpjs');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                                             <h3 class="text-white mb-0">Pasien Umum</h3>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <a href="<?= base_url('C_pasienumum');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
+                                            <a href="<?= base_url('kia/C_pasienumum');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                             <h3 class="text-white mb-0">Rekam Medis</h3>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <a href="<?= base_url('C_rekammedis');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
+                                            <a href="<?= base_url('kia/C_rekammedis');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
                                         </div>
                                     </div>
                                 </div>

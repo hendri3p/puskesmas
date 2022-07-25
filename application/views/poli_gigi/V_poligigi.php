@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Dashboard Admin</title>
+    <title>Dashboard Poli Gigi</title>
     <meta name="description" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
@@ -70,7 +70,7 @@
                                             <h3 class="text-white mb-0">Pasien BPJS</h3>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <a href="<?= base_url('C_bpjs');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
+                                            <a href="<?= base_url('gigi/C_bpjs');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                                             <h3 class="text-white mb-0">Pasien Umum</h3>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <a href="<?= base_url('C_pasienumum');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
+                                            <a href="<?= base_url('gigi/C_pasienumum');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                             <h3 class="text-white mb-0">Rekam Medis</h3>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <a href="<?= base_url('C_rekammedis');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
+                                            <a href="<?= base_url('gigi/C_rekammedis');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
                                         </div>
                                     </div>
                                 </div>

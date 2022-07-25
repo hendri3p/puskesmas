@@ -37,6 +37,6 @@ class C_rekammedis extends CI_Controller
 		if (!empty($this->input->get('tgl_berobat'))) {
 			$data['pasien'] = $this->M_rekammedis->search_join($data['tgl_berobat'], $data['jenis_poli']);
 		}
-		$this->load->view('V_rekammedis', $data);
+		$this->load->view('poli_gigi/V_rekammedis', $data);
 	}
 }

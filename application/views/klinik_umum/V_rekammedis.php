@@ -43,7 +43,7 @@
                         </div>
                         <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
                             <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_dashboard'); ?>">
+                                <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('umum/C_dashumum'); ?>">
                                     <i class="si si-home"></i> Kembali
                                 </a>
                             </span>

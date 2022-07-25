@@ -1,7 +1,7 @@
 <?php 
  
 class M_datapasien extends CI_Model{	
-	function tampil_data_umum(){
+	function tampil_data(){
 		return $this->db->get('berobat');
 	}
 	

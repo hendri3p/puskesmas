@@ -16,7 +16,7 @@ class C_bpjs extends CI_Controller
 		if (!empty($this->input->get('tgl_berobat'))) {
 			$data['berobat'] = $this->M_berobat->search_data_bpjs($data['tgl_berobat']);
 		}
-		$this->load->view('V_bpjs', $data);
+		$this->load->view('Klinik_umum/V_bpjs', $data);
 	}
 
 	public function edit($id_berobat)
