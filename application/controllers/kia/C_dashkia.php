@@ -12,6 +12,6 @@ class C_dashkia extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('klinik_kia/V_kia');
+		$this->load->view('klinik_kia/V_dashkia');
 	}
 }

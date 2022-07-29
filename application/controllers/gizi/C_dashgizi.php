@@ -12,6 +12,6 @@ class C_dashgizi extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('klinik_gizi/V_klinikgizi');
+		$this->load->view('klinik_gizi/V_dashgizi');
 	}
 }

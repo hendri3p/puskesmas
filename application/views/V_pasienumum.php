@@ -43,9 +43,37 @@
                         </div>
                         <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
                             <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_dashboard'); ?>">
-                                    <i class="si si-home"></i> Kembali
-                                </a>
+
+                                <?php
+                                if ($login == 'admin') { ?>
+                                    <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_dashboard'); ?>">
+                                        <i class="si si-home"></i> Kembali
+                                    </a>
+                                <?php } ?>
+                                <?php
+                                if ($login == 'poligigi') { ?>
+                                    <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('gigi/C_dashgigi'); ?>">
+                                        <i class="si si-home"></i> Kembali
+                                    </a>
+                                <?php } ?>
+                                <?php
+                                if ($login == 'klinikumum') { ?>
+                                    <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('umum/C_dashumum'); ?>">
+                                        <i class="si si-home"></i> Kembali
+                                    </a>
+                                <?php } ?>
+                                <?php
+                                if ($login == 'klinikkia') { ?>
+                                    <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('kia/C_dashkia'); ?>">
+                                        <i class="si si-home"></i> Kembali
+                                    </a>
+                                <?php } ?>
+                                <?php
+                                if ($login == 'klinikgizi') { ?>
+                                    <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('gizi/C_dashgizi'); ?>">
+                                        <i class="si si-home"></i> Kembali
+                                    </a>
+                                <?php } ?>
                             </span>
                         </div>
                     </div>
@@ -57,14 +85,7 @@
         <div class="content">
             <div class="row" style="margin-top: 50px">
                 <div class="col-xs-4 col-xs-offset-4">
-                <form action="" method="GET">
-                        <div class="input-group">
-                            <input type="date" name="tgl_berobat" class="form-control ml-3">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="submit" value="Cari">Cari</button>
-                            </span>
-                        </div>
-                    </form>
+                
                 </div>
             </div>
             <!-- Dynamic Table Full -->

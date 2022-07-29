@@ -11,10 +11,42 @@ class C_bpjs extends CI_Controller
 
 	public function index()
 	{
-		$data['berobat'] = $this->M_berobat->tampil_data_bpjs();
-		$data['tgl_berobat'] = $this->input->get('tgl_berobat');
-		if (!empty($this->input->get('tgl_berobat'))) {
-			$data['berobat'] = $this->M_berobat->search_data_bpjs($data['tgl_berobat']);
+		$login = $this->session->userdata('user_login');
+		$data['login'] = $login;
+		if ($login == 'admin') {
+			$data['berobat'] = $this->M_berobat->tampil_data_bpjs();
+			$data['tgl_berobat'] = $this->input->get('tgl_berobat');
+			if (!empty($this->input->get('tgl_berobat'))) {
+				$data['berobat'] = $this->M_berobat->search_data_bpjs($data['tgl_berobat']);
+			}
+		}
+		if ($login == 'poligigi') {
+			$data['berobat'] = $this->M_berobat->tampil_data_bpjs_poli('BP Gigi');
+			$data['tgl_berobat'] = $this->input->get('tgl_berobat');
+			if (!empty($this->input->get('tgl_berobat'))) {
+				$data['berobat'] = $this->M_berobat->search_data_bpjs_poli($data['tgl_berobat'], 'BP Gigi');
+			}
+		}
+		if ($login == 'klinikumum') {
+			$data['berobat'] = $this->M_berobat->tampil_data_bpjs_poli('KLinik Umum');
+			$data['tgl_berobat'] = $this->input->get('tgl_berobat');
+			if (!empty($this->input->get('tgl_berobat'))) {
+				$data['berobat'] = $this->M_berobat->search_data_bpjs_poli($data['tgl_berobat'], 'KLinik Umum');
+			}
+		}
+		if ($login == 'klinikkia') {
+			$data['berobat'] = $this->M_berobat->tampil_data_bpjs_poli('KIA KB');
+			$data['tgl_berobat'] = $this->input->get('tgl_berobat');
+			if (!empty($this->input->get('tgl_berobat'))) {
+				$data['berobat'] = $this->M_berobat->search_data_bpjs_poli($data['tgl_berobat'], 'KIA KB');
+			}
+		}
+		if ($login == 'klinikgizi') {
+			$data['berobat'] = $this->M_berobat->tampil_data_bpjs_poli('Klinik Gizi');
+			$data['tgl_berobat'] = $this->input->get('tgl_berobat');
+			if (!empty($this->input->get('tgl_berobat'))) {
+				$data['berobat'] = $this->M_berobat->search_data_bpjs_poli($data['tgl_berobat'], 'Klinik Gizi');
+			}
 		}
 		$this->load->view('V_bpjs', $data);
 	}

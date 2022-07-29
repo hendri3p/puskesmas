@@ -70,7 +70,7 @@
                                             <h3 class="text-white mb-0">Pasien BPJS</h3>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <a href="<?= base_url('gizi/C_bpjs');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
+                                            <a href="<?= base_url('C_bpjs');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                                             <h3 class="text-white mb-0">Pasien Umum</h3>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <a href="<?= base_url('gizi/C_pasienumum');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
+                                            <a href="<?= base_url('C_pasienumum');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                             <h3 class="text-white mb-0">Rekam Medis</h3>
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <a href="<?= base_url('gizi/C_rekammedis');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
+                                            <a href="<?= base_url('C_rekammedis');?>"><button type="button" class="btn btn-success btn-lg btn-block">Lihat</button></a>
                                         </div>
                                     </div>
                                 </div>

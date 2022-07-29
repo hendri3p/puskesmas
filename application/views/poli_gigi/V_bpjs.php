@@ -32,110 +32,103 @@
 
 <body>
 
-    <!-- Main Container -->
-    <main id="main-container">
-        <!-- Hero -->
-        <div class="bg-image overflow-hidden" style="background-image: url('<?= base_url(''); ?>assets/images/nakes.jpg');">
-            <div class="bg-primary-dark-op">
-                <div class="content content-narrow content-full">
-                    <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-8 text-center text-sm-left">
-                        <div class="flex-sm-fill">
-                            <h1 class="font-w600 text-white mb-2 invisible" data-toggle="appear">Pasien BPJS</h1>
-                        </div>
-                        <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
-                            <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('gigi/C_dashgigi'); ?>">
-                                    <i class="si si-home"></i> Kembali
-                                </a>
-                            </span>
+        <!-- Main Container -->
+        <main id="main-container">
+            <!-- Hero -->
+            <div class="bg-image overflow-hidden" style="background-image: url('assets/images/nakes.jpg');">
+                <div class="bg-primary-dark-op">
+                    <div class="content content-narrow content-full">
+                        <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-8 text-center text-sm-left">
+                            <div class="flex-sm-fill">
+                                <h1 class="font-w600 text-white mb-2 invisible" data-toggle="appear">Pasien BPJS</h1>
+                            </div>
+                            <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
+                                <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
+                                    <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_dashboard'); ?>">
+                                        <i class="si si-home"></i> Kembali
+                                    </a>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- END Hero -->
-        <!-- Page Content -->
-        <div class="content">
-            <div class="row" style="margin-top: 50px">
-                <div class="col-xs-4 col-xs-offset-4">
-                    <form action="" method="GET">
-                        <div class="input-group">
-                            <input type="date" name="tgl_berobat" class="form-control ml-3">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="submit" value="Cari">Cari</button>
-                            </span>
-                        </div>
-                    </form>
+            <!-- END Hero -->
+            <!-- Page Content -->
+            <div class="content">
+                <div class="row" style="margin-top: 50px">
+                    <div class="col-xs-4 col-xs-offset-4">
+                        <form action="<?= base_url('C_datapasien/search') ?>" method="get">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="keyword" placeholder="Masukan Kata Kunci...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">Cari</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <!-- Dynamic Table Full -->
-            <div class="block">
-                <div class="block-content block-content-full">
-                    <table class="table table-bordered table-responsive table-striped table-vcenter js-dataTable-full">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Tanggal</th>
-                                <th>NIK</th>
-                                <th>Nama Pasien</th>
-                                <th>Tinggi Badan</th>
-                                <th>Berat Badan</th>
-                                <th>S</th>
-                                <th>O</th>
-                                <th>A</th>
-                                <th>P</th>
-                                <th>Jenis Poli</th>
-                                <th>Diagnosa</th>
-                                <th>Hasil Lab</th>
-                                <th>Rujukan</th>
-                                <th>Resep Obat</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <?php
-                        $no = 1;
-                        foreach ($berobat as $berobat) {
-                        ?>
-                            <tbody>
+                <!-- Dynamic Table Full -->
+                <div class="block">
+                    <div class="block-content block-content-full">
+                        <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+                        <table class="table table-bordered table-striped table-vcenter">
+                            <thead>
                                 <tr>
-                                    <td><?php echo $no++ ?></td>
-                                    <td><?php echo $berobat['tgl_berobat'] ?></td>
-                                    <td><?php echo $berobat['nik'] ?></td>
-                                    <td><?php echo $berobat['nama_pasien_berobat'] ?></td>
-                                    <td><?php echo $berobat['tinggi_badan'] ?></td>
-                                    <td><?php echo $berobat['berat_badan'] ?></td>
-                                    <td><?php echo $berobat['s'] ?></td>
-                                    <td><?php echo $berobat['o'] ?></td>
-                                    <td><?php echo $berobat['a'] ?></td>
-                                    <td><?php echo $berobat['p'] ?></td>
-                                    <td><?php echo $berobat['jenis_poli'] ?></td>
-                                    <td><?php echo $berobat['diagnosa'] ?></td>
-                                    <td>
-                                        <?php if ($berobat['hasil_lab'] != '-') { ?>
-                                            <a href="<?= base_url('') ?>/assets/file_upload/<?php echo $berobat['hasil_lab'] ?>" class="btn btn-success">Download</a>
-                                        <?php } else { ?>
-                                            <?php echo $berobat['hasil_lab'] ?>
-                                        <?php } ?>
-                                    </td>
-                                    <td><?php echo $berobat['rujukan'] ?></td>
-                                    <td><?php echo $berobat['jenis_obat'] ?></td>
-                                    <td>
-                                        <?php echo anchor('C_bpjs/edit/' . $berobat['id_berobat'], 'Edit'); ?>
-                                        <?php echo anchor('C_bpjs/hapus/' . $berobat['nik'], 'Hapus'); ?>
-                                    </td>
+                                    <th>No</th>
+                                    <th>NIK</th>
+                                    <th>Nama Pasien</th>
+                                    <th>Tinggi Badan</th>
+                                    <th>Berat Badan</th>
+                                    <th>S</th>
+                                    <th>O</th>
+                                    <th>A</th>
+                                    <th>P</th>
+                                    <th>Jenis Poli</th>
+                                    <th>Diagnosa</th>
+                                    <th>Resep Obat</th>
+                                    <th>Aksi</th>
                                 </tr>
-                            </tbody>
-                        <?php } ?>
-                    </table>
-                </div>
-                <!-- <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-data" class="modal fade">
+                            </thead>
+                            <?php
+                            $no = 1;
+                            foreach ($berobat as $berobat) {
+                            ?>
+                                <tbody>
+                                    <tr>
+                                        <td><?php echo $no++ ?></td>
+                                        <td><?php echo $berobat->nik ?></td>
+                                        <td><?php echo $berobat->nama_pasien_berobat ?></td>
+                                        <td><?php echo $berobat->tinggi_badan?></td>
+                                        <td><?php echo $berobat->berat_badan?></td>
+                                        <td><?php echo $berobat->s?></td>
+                                        <td><?php echo $berobat->o?></td>
+                                        <td><?php echo $berobat->a?></td>
+                                        <td><?php echo $berobat->p?></td>
+                                        <td><?php echo $berobat->jenis_poli?></td>
+                                        <td><?php echo $berobat->diagnosa?></td>
+                                        <td><?php echo $berobat->jenis_obat?></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <?php echo anchor('C_bpjs/edit/'.$berobat->id_berobat,'Edit'); ?>
+                                            <?php echo anchor('C_bpjs/hapus/'.$berobat->id_berobat,'Hapus'); ?>          
+                                        <!-- </td>
+                                         <td class="d-none d-sm-table-cell font-size-sm">
+                                            <a data-toggle="modal" data-target="#edit-data"><button class="btn btn-success">Edit</button></a>
+                                        </td> -->
+                                    </tr>
+                                </tbody>
+                            <?php } ?>
+                        </table>
+                    </div>
+                    <!-- <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit-data" class="modal fade">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h4 class="modal-title">Edit Data</h4>
                                     </div>
-                                    <form class="form-horizontal" action="<?php echo base_url('admin/tambah') ?>" method="post" enctype="multipart/form-data" role="form">
+                                    <form class="form-horizontal" action="<?php echo base_url('admin/tambah')?>" method="post" enctype="multipart/form-data" role="form">
                                     <div class="modal-body">
                                             <div class="form-group">
                                                 <label class="col-lg-2 col-sm-2 control-label">Diagnosa</label>
@@ -165,12 +158,12 @@
                                 </div>
                             </div>
                         </div> -->
+                </div>
+                <!-- END Dynamic Table Full -->
             </div>
-            <!-- END Dynamic Table Full -->
-        </div>
-        <!-- END Page Content -->
-    </main>
-    <!-- END Main Container -->
+            <!-- END Page Content -->
+        </main>
+        <!-- END Main Container -->
     </div>
     <!-- END Page Container -->
     <!--

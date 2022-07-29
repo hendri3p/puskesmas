@@ -15,8 +15,24 @@ class C_pasienumum extends CI_Controller
 
 	public function index()
 	{
-		$data['keyword'] = $this->input->get('keyword');
-		$data['berobat'] = $this->M_berobat->tampil_data_bpjs_umum()->result();
+		$login = $this->session->userdata('user_login');
+		$data['login'] = $login;
+		if ($login == 'admin') {
+			$data['berobat'] = $this->M_berobat->tampil_data_bpjs_umum()->result();
+		}
+		if ($login == 'poligigi') {
+			$data['berobat'] = $this->M_berobat->tampil_data_bpjs_umum_poli('BP Gigi')->result();
+			
+		}
+		if ($login == 'klinikumum') {
+			$data['berobat'] = $this->M_berobat->tampil_data_bpjs_umum_poli('KLinik Umum')->result();
+		}
+		if ($login == 'klinikkia') {
+			$data['berobat'] = $this->M_berobat->tampil_data_bpjs_umum_poli('KIA KB')->result();
+		}
+		if ($login == 'klinikgizi') {
+			$data['berobat'] = $this->M_berobat->tampil_data_bpjs_umum_poli('Klinik Gizi')->result();
+		}
 		$this->load->view('V_pasienumum', $data);
 	}
 

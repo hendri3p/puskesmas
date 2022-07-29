@@ -82,7 +82,8 @@
                     <table class="table table-bordered table-responsive table-striped table-vcenter js-dataTable-full">
                         <thead>
                             <tr>
-                                <th class="text-center" style="width: 80px;">No</th>
+                                <th class="text-center" style="width: 80px;">Tgl</th>
+                                <th>No</th>
                                 <th>No KK</th>
                                 <th>NIK</th>
                                 <th>Tanggal Berobat</th>
@@ -110,6 +111,7 @@
                         ?>
                             <tbody>
                                 <tr>
+                                    <td><?php echo $no++ ?></td>
                                     <td><?php echo $pas['id_pasien'] ?></td>
                                     <td><?php echo $pas['no_kk'] ?></td>
                                     <td><?php echo $pas['nik'] ?></td>

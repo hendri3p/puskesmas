@@ -12,6 +12,6 @@ class C_dashumum extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('klinik_umum/V_klinikumum');
+		$this->load->view('klinik_umum/V_dashumum');
 	}
 }

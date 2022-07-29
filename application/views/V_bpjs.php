@@ -40,13 +40,40 @@
                 <div class="content content-narrow content-full">
                     <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mt-4 mb-8 text-center text-sm-left">
                         <div class="flex-sm-fill">
-                            <h1 class="font-w600 text-white mb-2 invisible" data-toggle="appear">Pasien BPJS</h1>
+                            <h1 class="font-w600 text-white mb-2 invisible" data-toggle="appear">Pasien BPJS </h1>
                         </div>
                         <div class="flex-sm-00-auto mt-3 mt-sm-0 ml-sm-3">
                             <span class="d-inline-block invisible" data-toggle="appear" data-timeout="350">
-                                <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_dashboard'); ?>">
-                                    <i class="si si-home"></i> Kembali
-                                </a>
+                                <?php
+                                if ($login == 'admin') { ?>
+                                    <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('C_dashboard'); ?>">
+                                        <i class="si si-home"></i> Kembali
+                                    </a>
+                                <?php } ?>
+                                <?php
+                                if ($login == 'poligigi') { ?>
+                                    <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('gigi/C_dashgigi'); ?>">
+                                        <i class="si si-home"></i> Kembali
+                                    </a>
+                                <?php } ?>
+                                <?php
+                                if ($login == 'klinikumum') { ?>
+                                    <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('umum/C_dashumum'); ?>">
+                                        <i class="si si-home"></i> Kembali
+                                    </a>
+                                <?php } ?>
+                                <?php
+                                if ($login == 'klinikkia') { ?>
+                                    <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('kia/C_dashkia'); ?>">
+                                        <i class="si si-home"></i> Kembali
+                                    </a>
+                                <?php } ?>
+                                <?php
+                                if ($login == 'klinikgizi') { ?>
+                                    <a class="btn btn-primary px-4 py-2" data-toggle="click-ripple" href="<?= base_url('gizi/C_dashgizi'); ?>">
+                                        <i class="si si-home"></i> Kembali
+                                    </a>
+                                <?php } ?>
                             </span>
                         </div>
                     </div>

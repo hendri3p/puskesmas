@@ -14,6 +14,6 @@ class C_dashgigi extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('poli_gigi/V_poligigi');
+		$this->load->view('poli_gigi/V_dashgigi');
 	}
 }
